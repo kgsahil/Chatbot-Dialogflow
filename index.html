@@ -1,0 +1,129 @@
+
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
+    <link rel="stylesheet" href="./style.css">    
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+    </head>
+
+    <body class="grey lighten-4">
+            <div class="navbar-fixed">
+            <nav>
+                    <div class="teal darken-2 nav-wrapper">
+                      <a href="#!" class=" right brand-logo">DeepBot</a>
+                      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                      <ul class="left hide-on-med-and-down">
+                        <li><a href="#">Music</a></li>
+                        <li><a href="#">Videos</a></li>
+                      </ul>
+                    </div>
+            </nav>
+            </div>
+                
+                  <ul class="sidenav" id="mobile-demo">
+                    <li onclick=showRoom() ><a href="#">Chat</a></li>
+                    <li onclick=showMusic()><a href="#">Music</a></li>
+                    <li onclick=showVideo()><a href="#">Doctors</a></li>
+                  </ul>
+
+      
+      <section class="section roomSection grey lighten-4 center" style="height: 100vh; padding: 0;">
+        <div class="container" style="width:100%;height:100%">
+            <iframe
+            id="ifr"
+            style="overflow:hidden"
+            allow="microphone;"
+            width="100%"
+            height="100%"
+            src="https://console.dialogflow.com/api-client/demo/embedded/f6d00507-04b6-49d7-b18b-fe6793051272">
+        </iframe>
+
+        </div>
+      </section>            
+
+
+
+      <!-- Section: Ion Boxes -->
+ 
+
+
+  <section class="section section-icons grey lighten-4 center musicSection">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col s12 m4 ">
+          <div class="card-panel teal darken-2 z-depth-4 ">
+              <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/326556820&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+          </div>
+        </div>
+        <div class="col s12 m4 ">
+        <div class="card-panel z-depth-4 teal darken-2  ">
+                <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/326556820&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+            </div>
+        </div>
+        <div class="col s12 m4 ">
+              <div class="card-panel  teal darken-2 z-depth-4 ">
+                  <iframe width="100%" height="100%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/326556820&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+              </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+    <section class="section grey lighten-4 center videoSection">
+    <div class="container">
+        <div class="btn teal "><a href="https://www.google.com/maps/search/doctors+and+counselors+near+me/">
+          <span class="white-text">oepn maps</span>
+          <i class="material-icons right white-text">send</i>
+          </a>
+        </div>
+    </div>
+  </section>
+
+      <script>
+         
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+                showRoom();
+                $('#ifr').ready(function(){
+                  
+                });
+               
+            });
+            function showRoom(){
+              $('.roomSection').show();
+              $('.musicSection').hide();
+              $('.videoSection').hide();
+            }
+            function showMusic(){
+              $('.musicSection').show();
+              $('.videoSection').hide();
+              $('.roomSection').hide();
+
+            }
+            function showVideo(){
+              $('.musicSection').hide();
+              $('.videoSection').hide();
+              $('.videoSection').show();
+            }
+           
+      </script>
+    </body>
+  </html>
